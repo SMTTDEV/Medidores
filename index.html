@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f2f2f2;
+    }
+
+    select {
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #5c9ded;
+      box-shadow: 0 0 5px rgba(92,157,237,0.5);
+    }
+  </style>
+</head>
+<body>  
+  <select onchange="abrirEmNovaAba(this)">   
+    <option value="" disabled selected>Selecione um arquivo</option>
+    <option value="https://www.google.com">Google</option>
+    <option value="https://www.wikipedia.org">Wikipedia</option>
+    <option value="https://www.github.com">GitHub</option>
+  </select>
+
+  <script>
+    function abrirEmNovaAba(selectElement) {
+      const url = selectElement.value;
+      if (url) {
+        window.open(url, '_blank'); // Abre em nova aba
+        selectElement.selectedIndex = 0; // Volta para o placeholder
+      }
+    }
+  </script>
+
+</body>
+</html>
