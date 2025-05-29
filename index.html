@@ -33,6 +33,7 @@
       color: #555;
       margin-bottom: 20px;
       line-height: 1.6;
+      text-align: justify;
     }
   </style>
 </head>
@@ -54,6 +55,13 @@
       <option value="https://www.github.com">GitHub</option>
     </select>
 
+    <br><br>
+  
+   <h5>Lista de Equipamentos POr Localidade</h5>
+    <select onchange="abrirEmNovaAba(this)">   
+      <option value="https://www.example.com">Relação de Equipamentos Por Localidade</option>
+    </select>
+
   <script>
     function abrirEmNovaAba(selectElement) {
       const url = selectElement.value;
@@ -66,4 +74,5 @@
 
 </body>
 </html>
+
 
