@@ -6,7 +6,7 @@
     body {
       font-family: Arial, sans-serif;
       padding: 30px;
-      background-color: #ffffff;;
+      background-color: #ffffff;
     }
 
     select {
@@ -27,16 +27,32 @@
       border-color: #5c9ded;
       box-shadow: 0 0 5px rgba(92,157,237,0.5);
     }
+
+    .info-text {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
   </style>
 </head>
-<body> 
-  <h5>Lista de Equipamentos de Fiscalização Eletrônica </h5>  
-  <select onchange="abrirEmNovaAba(this)">   
-    <option value="" disabled selected>Selecione um arquivo</option>
-    <option value="https://www.google.com">Google</option>
-    <option value="https://www.wikipedia.org">Wikipedia</option>
-    <option value="https://www.github.com">GitHub</option>
-  </select>
+<body>
+    <div class="info-text">
+      <p>A lista a seguir apresenta equipamentos utilizados na fiscalização eletrônica de trânsito da cidade. Esses dispositivos desempenham um papel crucial no monitoramento e na aplicação das normas de trânsito, visando garantir a segurança, reduzir infrações e melhorar a mobilidade urbana. Os equipamentos, como radares, câmeras de monitoramento e outros dispositivos automatizados, têm como objetivo a detecção precisa e em tempo real de infrações, com registro das imagens e dados pertinentes. A utilização desses equipamentos visa proporcionar maior eficiência na fiscalização, reduzir a necessidade de presença física de agentes de trânsito e melhorar a justiça no processo de aplicação das multas.</p>
+      
+      <p>De acordo com o <strong>Código de Trânsito Brasileiro (CTB)</strong>, em especial o artigo 280, as infrações de trânsito podem ser constatadas por meios eletrônicos, sendo válida a utilização de sistemas automáticos para a imposição de multas. Além disso, a <strong>Resolução 371/2011 do CONTRAN</strong> regula o uso de radares, câmeras e outros dispositivos de fiscalização eletrônica, determinando suas especificações técnicas e as condições para a aplicação das penalidades. A legislação garante que os processos de fiscalização sejam feitos de forma justa e transparente, além de prever que os infratores sejam notificados adequadamente.</p>
+      
+      <p>Portanto, a utilização de tais equipamentos segue uma regulamentação rigorosa que visa assegurar a legalidade e a eficácia na fiscalização de trânsito.</p>
+    </div>
+    
+    <h5>Lista de Equipamentos de Fiscalização Eletrônica</h5>  
+    
+    <select onchange="abrirEmNovaAba(this)">   
+      <option value="" disabled selected>Selecione um arquivo</option>
+      <option value="https://www.google.com">Google</option>
+      <option value="https://www.wikipedia.org">Wikipedia</option>
+      <option value="https://www.github.com">GitHub</option>
+    </select>
 
   <script>
     function abrirEmNovaAba(selectElement) {
@@ -50,3 +66,4 @@
 
 </body>
 </html>
+
