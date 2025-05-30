@@ -62,7 +62,7 @@
       <option value=""></option>
     </select>
 
-    <br><br>
+    <br>
   
    <h5>Lista de Equipamentos Por Localidade</h5>
     <select onchange="abrirEmNovaAba(this)">   
@@ -74,7 +74,7 @@
     function abrirEmNovaAba(selectElement) {
       const url = selectElement.value;
       if (url) {
-        window.open(url, '_blank'); // Abre em nova aba
+        window.open(url, '_blank', 'noopener'); // Abre em nova aba
         selectElement.selectedIndex = 0; // Volta para o placeholder
       }
     }
