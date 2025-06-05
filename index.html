@@ -9,31 +9,31 @@
       background-color: #ffffff;
     }
 
-    select {
-    width: 190px; 
-    padding: 10px 15px;
-    font-size: 16px;
-    color: #ffffff;
-    border-radius: 3px;
-    border: 1px solid #cccccc00;
-    background-color: rgb(0, 140, 255);
-    cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-    select option {
-      color: #000000; /* opções com texto preto */
-      background-color: #ffffff; /* fundo branco nas opções */
+    .accordion {
+      background-color: rgb(0, 120, 220);
+      color: white;
+      cursor: pointer;
+      padding: 10px 15px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      margin: 5px 0;
+      border-radius: 1px;
+      transition: background-color 0.3s;
     }
 
-    select:focus {
-      outline: none;         
+    .accordion:hover {
+      background-color: rgb(0, 98, 178);
+    }
+
+    .panel {
+      padding: 0 18px;
+      display: none;
+      background-color: #f1f1f1;
+      margin: 5px 0;
+      border-radius: 3px;
     }
 
     .info-text {
@@ -54,31 +54,60 @@
       <p>Portanto, a utilização de tais equipamentos segue uma regulamentação rigorosa que visa assegurar a legalidade e a eficácia na fiscalização de trânsito.</p>
     </div>
     
-    <h5>Lista de Equipamentos de Fiscalização Eletrônica</h5>    
-    <select onchange="abrirEmNovaAba(this)">   
-      <option value="" disabled selected>Selecione um arquivo</option>
-      <option value=""></option>
-      <option value=""></option>
-      <option value=""></option>
-    </select>
+    <h5>Lista de Equipamentos de Fiscalização Eletrônica</h5>
+
+    <!-- Accordion para anos -->
+    <button class="accordion">2023</button>
+    <div class="panel">
+      <ul>
+        <li>Equipamento A</li>
+        <li>Equipamento B</li>
+        <li>Equipamento C</li>
+      </ul>
+    </div>
+
+    <button class="accordion">2024</button>
+    <div class="panel">
+      <ul>
+        <li>Equipamento X</li>
+        <li>Equipamento Y</li>
+        <li>Equipamento Z</li>
+      </ul>
+    </div>
+
+    <button class="accordion">2025</button>
+    <div class="panel">
+      <ul>
+        <li>Equipamento 1</li>
+        <li>Equipamento 2</li>
+        <li>Equipamento 3</li>
+      </ul>
+    </div>
 
     <br>
-  
-   <h5>Lista de Equipamentos Por Localidade</h5>
-    <select onchange="abrirEmNovaAba(this)">   
-      <option value="" disabled selected>Selecione um arquivo</option>
-      <option value="http://smttaju.com.br/images/pdf/equipamentos_de_fiscalizacao_eletronica_smtt_aracaju.pdf">Equip. de Fisc. Eletrônica</option>
-    </select>
+
+    <h5>Lista de Equipamentos Por Localidade</h5>
+    
+    <!-- Accordion para o arquivo PDF -->
+    <button class="accordion">Equipamentos de Fiscalização Eletrônica</button>
+    <div class="panel">
+      <a href="http://smttaju.com.br/images/pdf/equipamentos_de_fiscalizacao_eletronica_smtt_aracaju.pdf" target="_blank">Clique aqui para acessar o PDF</a>
+    </div>
 
   <script>
-    function abrirEmNovaAba(selectElement) {
-      const url = selectElement.value;
-      if (url) {
-        window.open(url, '_blank', 'noopener'); // Abre em nova aba
-        selectElement.selectedIndex = 0; // Volta para o placeholder
-      }
+    // Script para abrir e fechar o acordeão
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
     }
   </script>
-
 </body>
 </html>
