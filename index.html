@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipamentos de Fiscalização</title>
+
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -22,10 +28,21 @@
       margin: 5px 0;
       border-radius: 3px;
       transition: background-color 0.3s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .accordion:hover {
       background-color: rgb(0, 98, 178);
+    }
+
+    .accordion .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .accordion.active .arrow {
+      transform: rotate(90deg);
     }
 
     .panel {
@@ -43,73 +60,86 @@
       line-height: 1.6;
       text-align: justify;
     }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: #003366;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-    <div class="info-text">
-      <p>A lista a seguir apresenta equipamentos utilizados na fiscalização eletrônica de trânsito da cidade. Esses dispositivos desempenham um papel crucial no monitoramento e na aplicação das normas de trânsito, visando garantir a segurança, reduzir infrações e melhorar a mobilidade urbana. Os equipamentos, como radares, câmeras de monitoramento e outros dispositivos automatizados, têm como objetivo a detecção precisa e em tempo real de infrações, com registro das imagens e dados pertinentes. A utilização desses equipamentos visa proporcionar maior eficiência na fiscalização, reduzir a necessidade de presença física de agentes de trânsito e melhorar a justiça no processo de aplicação das multas.</p>
-      
-      <p>De acordo com o <strong>Código de Trânsito Brasileiro (CTB)</strong>, em especial o artigo 280, as infrações de trânsito podem ser constatadas por meios eletrônicos, sendo válida a utilização de sistemas automáticos para a imposição de multas. Além disso, a <strong>Resolução 371/2011 do CONTRAN</strong> regula o uso de radares, câmeras e outros dispositivos de fiscalização eletrônica, determinando suas especificações técnicas e as condições para a aplicação das penalidades. A legislação garante que os processos de fiscalização sejam feitos de forma justa e transparente, além de prever que os infratores sejam notificados adequadamente.</p>
-      
-      <p>Portanto, a utilização de tais equipamentos segue uma regulamentação rigorosa que visa assegurar a legalidade e a eficácia na fiscalização de trânsito.</p>
-    </div>
-    
-    <h5>Lista de Equipamentos de Fiscalização Eletrônica</h5>
 
-    <!-- Accordion para anos -->
-  <button class="accordion">2022</button>
-    <div class="panel">
-      <ul>
-        <a href=""  target="_blank">Equipamento I</a>
-        <li>Equipamento II</li>
-        <li>Equipamento III</li>
-      </ul>
-    </div>
-  
-    <button class="accordion">2023</button>
-    <div class="panel">
-      <ul>
-        <li>Equipamento A</li>
-        <li>Equipamento B</li>
-        <li>Equipamento C</li>
-      </ul>
-    </div>
+  <div class="info-text">
+    <p>A lista a seguir apresenta equipamentos utilizados na fiscalização eletrônica de trânsito da cidade. Esses dispositivos desempenham um papel crucial no monitoramento e na aplicação das normas de trânsito, visando garantir a segurança, reduzir infrações e melhorar a mobilidade urbana.</p>
 
-    <button class="accordion">2024</button>
-    <div class="panel">
-      <ul>
-        <li>Equipamento X</li>
-        <li>Equipamento Y</li>
-        <li>Equipamento Z</li>
-      </ul>
-    </div>
+    <p>De acordo com o <strong>Código de Trânsito Brasileiro (CTB)</strong>, em especial o artigo 280, as infrações de trânsito podem ser constatadas por meios eletrônicos. Além disso, a <strong>Resolução 371/2011 do CONTRAN</strong> regula o uso de radares, câmeras e outros dispositivos de fiscalização eletrônica.</p>
 
-    <button class="accordion">2025</button>
-    <div class="panel">
-      <ul>
-        <li>Equipamento 1</li>
-        <li>Equipamento 2</li>
-        <li>Equipamento 3</li>
-      </ul>
-    </div>
+    <p>Portanto, a utilização de tais equipamentos segue uma regulamentação rigorosa que visa assegurar a legalidade e a eficácia na fiscalização de trânsito.</p>
+  </div>
 
-    <br>
+  <h5>Lista de Equipamentos de Fiscalização Eletrônica</h5>
 
-    <h5>Lista de Equipamentos Por Localidade</h5>
-    
-    <!-- Accordion para o arquivo PDF -->
-    <button class="accordion">Equipamentos de Fiscalização Eletrônica</button>
-    <div class="panel">
-      <a href="http://smttaju.com.br/images/Medidores/Equipamentos/equipamentos de fiscalizao eletrnica smtt aracaju.pdf" target="_blank">Clique aqui para acessar o PDF</a>
-    </div>
+  <button class="accordion">2022 <i class="fa-solid fa-chevron-right arrow"></i></button>
+  <div class="panel">
+    <ul>
+      <li><a href="" target="_blank">Equipamento I</a></li>
+      <li>Equipamento II</li>
+      <li>Equipamento III</li>
+    </ul>
+  </div>
+
+  <button class="accordion">2023 <i class="fa-solid fa-chevron-right arrow"></i></button>
+  <div class="panel">
+    <ul>
+      <li>Equipamento A</li>
+      <li>Equipamento B</li>
+      <li>Equipamento C</li>
+    </ul>
+  </div>
+
+  <button class="accordion">2024 <i class="fa-solid fa-chevron-right arrow"></i></button>
+  <div class="panel">
+    <ul>
+      <li>Equipamento X</li>
+      <li>Equipamento Y</li>
+      <li>Equipamento Z</li>
+    </ul>
+  </div>
+
+  <button class="accordion">2025 <i class="fa-solid fa-chevron-right arrow"></i></button>
+  <div class="panel">
+    <ul>
+      <li>Equipamento 1</li>
+      <li>Equipamento 2</li>
+      <li>Equipamento 3</li>
+    </ul>
+  </div>
+
+  <br>
+
+  <h5>Lista de Equipamentos Por Localidade</h5>
+
+  <button class="accordion">Equipamentos de Fiscalização Eletrônica <i class="fa-solid fa-chevron-right arrow"></i></button>
+  <div class="panel">
+    <a href="http://smttaju.com.br/images/Medidores/Equipamentos/equipamentos de fiscalizao eletrnica smtt aracaju.pdf" target="_blank">Clique aqui para acessar o PDF</a>
+  </div>
 
   <script>
-    // Script para abrir e fechar o acordeão
-    var acc = document.getElementsByClassName("accordion");
-    for (var i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
+    const acc = document.getElementsByClassName("accordion");
+
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
         this.classList.toggle("active");
-        var panel = this.nextElementSibling;
+        const panel = this.nextElementSibling;
+
         if (panel.style.display === "block") {
           panel.style.display = "none";
         } else {
@@ -118,5 +148,6 @@
       });
     }
   </script>
+
 </body>
 </html>
