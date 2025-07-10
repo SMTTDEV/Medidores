@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Equipamentos de Fiscalização</title>
 
   <!-- Font Awesome para ícones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
     body {
@@ -46,9 +46,9 @@
     }
 
     .panel {
-      padding: 0 18px;
+      padding: 10px 18px;
       display: none;
-      background-color: #f1f1f1;
+      background-color: #f1f1f144;
       margin: 5px 0;
       border-radius: 3px;
     }
@@ -58,20 +58,35 @@
       color: #555;
       margin-bottom: 20px;
       line-height: 1.6;
-      text-align: justify;
     }
 
     ul {
-      padding-left: 20px;
+      padding-left: 0;
+      list-style: none;
     }
 
-    a {
+    li a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 10px;
       color: #003366;
-      text-decoration: underline;
+      text-decoration: none;
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.2s;
     }
 
-    a:hover {
-      text-decoration: none;
+    li a:hover {
+      background-color: #e8f0fa;
+    }
+
+    .pdf-icon {
+      color: #d32f2f;
+      font-size: 18px;
+    }
+
+    li a:hover .pdf-icon {
+      color: #a00000;
     }
   </style>
 </head>
@@ -84,67 +99,69 @@
 
     <p>Portanto, a utilização de tais equipamentos segue uma regulamentação rigorosa que visa assegurar a legalidade e a eficácia na fiscalização de trânsito.</p>
   </div>
-<!--
+
   <h5>Lista de Equipamentos de Fiscalização Eletrônica</h5>
 
   <button class="accordion">2022 <i class="fa-solid fa-chevron-right arrow"></i></button>
   <div class="panel">
     <ul>
-      <li><a href="" target="_blank">Equipamento I</a></li>
-      <li>Equipamento II</li>
-      <li>Equipamento III</li>
+      <li><a href="#"><span>Equipamento I</span><i class="fa-solid fa-file-pdf pdf-icon"></i></a></li>
+      <li><a href="#"><span>Equipamento II</span><i class="fa-solid fa-file-pdf pdf-icon"></i></a></li>
+      <li><a href="#"><span>Equipamento III</span><i class="fa-solid fa-file-pdf pdf-icon"></i></a></li>
     </ul>
   </div>
 
   <button class="accordion">2023 <i class="fa-solid fa-chevron-right arrow"></i></button>
   <div class="panel">
     <ul>
-      <li>Equipamento A</li>
-      <li>Equipamento B</li>
-      <li>Equipamento C</li>
+      <li><a href="#"><span>Equipamento A</span><i class="fa-solid fa-file-pdf pdf-icon"></i></a></li>
+      <li><a href="#"><span>Equipamento B</span><i class="fa-solid fa-file-pdf pdf-icon"></i></a></li>
+      <li><a href="#"><span>Equipamento C</span><i class="fa-solid fa-file-pdf pdf-icon"></i></a></li>
     </ul>
   </div>
 
   <button class="accordion">2024 <i class="fa-solid fa-chevron-right arrow"></i></button>
   <div class="panel">
     <ul>
-      <li>Equipamento X</li>
-      <li>Equipamento Y</li>
-      <li>Equipamento Z</li>
+      <li><a href="#"><span>Equipamento X</span><i class="fa-solid fa-file-pdf pdf-icon"></i></a></li>
+      <li><a href="#"><span>Equipamento Y</span><i class="fa-solid fa-file-pdf pdf-icon"></i></a></li>
+      <li><a href="#"><span>Equipamento Z</span><i class="fa-solid fa-file-pdf pdf-icon"></i></a></li>
     </ul>
   </div>
 
   <button class="accordion">2025 <i class="fa-solid fa-chevron-right arrow"></i></button>
   <div class="panel">
     <ul>
-      <li>Equipamento 1</li>
-      <li>Equipamento 2</li>
-      <li>Equipamento 3</li>
+      <li><a href="#"><span>Equipamento 1</span><i class="fa-solid fa-file-pdf pdf-icon"></i></a></li>
+      <li><a href="#"><span>Equipamento 2</span><i class="fa-solid fa-file-pdf pdf-icon"></i></a></li>
+      <li><a href="#"><span>Equipamento 3</span><i class="fa-solid fa-file-pdf pdf-icon"></i></a></li>
     </ul>
   </div>
 
   <br>
--->
+
   <h5>Lista de Equipamentos Por Localidade</h5>
 
   <button class="accordion">Equipamentos de Fiscalização Eletrônica <i class="fa-solid fa-chevron-right arrow"></i></button>
   <div class="panel">
-    <a href="http://smttaju.com.br/images/Medidores/Equipamentos/equipamentos de fiscalizao eletrnica smtt aracaju.pdf" target="_blank">Clique aqui para acessar o PDF</a>
+    <ul>
+      <li>
+        <a href="http://smttaju.com.br/images/Medidores/Equipamentos/equipamentos de fiscalizao eletrnica smtt aracaju.pdf" target="_blank">
+          <span>Lista completa em PDF</span>
+          <i class="fa-solid fa-file-pdf pdf-icon"></i>
+        </a>
+      </li>
+    </ul>
   </div>
 
   <script>
     const acc = document.getElementsByClassName("accordion");
-
     for (let i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function () {
+      acc[i].addEventListener("click", function (e) {
+        if (e.target.closest("a")) return; // Evita conflito ao clicar no link
         this.classList.toggle("active");
         const panel = this.nextElementSibling;
-
-        if (panel.style.display === "block") {
-          panel.style.display = "none";
-        } else {
-          panel.style.display = "block";
-        }
+        panel.style.display = (panel.style.display === "block") ? "none" : "block";
       });
     }
   </script>
